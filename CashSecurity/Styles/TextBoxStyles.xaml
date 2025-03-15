@@ -1,0 +1,158 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style x:Key="search" TargetType="TextBox">
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TextBox">
+
+                    <Border
+                        CornerRadius="5"
+                        BorderThickness="0.3"
+                        Height="35"
+                        BorderBrush="{DynamicResource BorderColor}"
+                        Background="White">
+                        <Border 
+                            x:Name="B"
+                            Margin="10 5"
+                            BorderThickness="0 0 0 1"
+                            BorderBrush="{DynamicResource BorderColor}">
+
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="30"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Path
+                                    Grid.Column="0"
+                                    Stretch="Fill"
+                                    Height="15"
+                                    Width="15"
+                                    Fill="{DynamicResource BorderColor}"
+                                    Data="{DynamicResource qidirish}"/>
+
+                                <ScrollViewer
+                                    Margin="0 0 0 2"
+                                    Grid.Column="1"
+                                    x:Name="PART_ContentHost" />
+
+                            </Grid>
+
+                        </Border>
+                    </Border>
+
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+    </Style>
+
+    <Style x:Key="Update_TextBox_Style" TargetType="{x:Type TextBox}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{ x:Type TextBox}">
+                    <Grid
+                        HorizontalAlignment="Left"
+                        Margin="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition Height="0.5"/>
+                        </Grid.RowDefinitions>
+                        <TextBox
+                            x:Name="FirstName"
+                            Width="200"
+                            MaxLength="{TemplateBinding MaxLength}"
+                            Grid.Row="0"
+                            Margin="2 0 0 0"
+                            FontSize="16"
+                            FontWeight="SemiBold"
+                            BorderThickness="0"
+                            VerticalAlignment="Center"
+                            Foreground="{DynamicResource BorderColor}"
+                            Background="Transparent">
+
+                        </TextBox>
+                        <Border
+                            Width="200"
+                            x:Name="bordername"
+                            Grid.Row="1"
+                            Background="{DynamicResource BorderColor}">
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="bordername" Property="Background" Value="#2696FF"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="False">
+                            <Setter TargetName="bordername" Property="Background" Value="{DynamicResource BorderColor}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+    </Style>
+
+    <Style x:Key="Phone_Number_TextBox_Style" TargetType="{x:Type TextBox}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{ x:Type TextBox}">
+                    <StackPanel
+                        Width="200"
+                        Orientation="Horizontal"
+                        HorizontalAlignment="Left"
+                        Margin="0 7 0 2">
+                        <Label
+                            Margin="0 4 0 0"
+                            Content="+998"
+                            FontSize="16"
+                            Style="{DynamicResource TitleLabel}"/>
+                        <Grid
+                            HorizontalAlignment="Left"
+                            Margin="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="30"/>
+                                <RowDefinition Height="0.5"/>
+                            </Grid.RowDefinitions>
+                            <TextBox
+                                x:Name="FirstName"
+                                Grid.Row="0"
+                                Margin="0 0 0 3"
+                                Text="917727005"
+                                FontWeight="SemiBold"
+                                FontSize="16" 
+                                MaxLength="9"
+                                BorderThickness="0"
+                                VerticalAlignment="Bottom"
+                                Foreground="{DynamicResource BorderColor}"
+                                Background="Transparent">
+
+                            </TextBox>
+                            <Border
+                                Width="200"
+                                x:Name="bordername"
+                                Grid.Row="1"
+                                Background="{DynamicResource BorderColor}">
+                            </Border>
+                        </Grid>
+                    </StackPanel>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="bordername" Property="Background" Value="#2696FF"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="False">
+                            <Setter TargetName="bordername" Property="Background" Value="{DynamicResource BorderColor}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>
