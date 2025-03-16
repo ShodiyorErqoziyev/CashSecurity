@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using CashSecurity.Pages;
+using System.Windows;
 
 namespace CashSecurity;
 
@@ -19,12 +20,14 @@ public partial class MainWindow : Window
 
     private void rb_Home_Click(object sender, RoutedEventArgs e)
     {
-
+        HomePage homePage = new HomePage();
+        PageNavigator.Content = homePage;
     }
 
     private void rb_Track_Click(object sender, RoutedEventArgs e)
     {
-
+        TrackPage trackPage = new TrackPage();
+        PageNavigator.Content = new TrackPage();
     }
 
 }
